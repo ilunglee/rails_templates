@@ -1,0 +1,12 @@
+.DS_Store
+.git/*
+log/*
+tmp/*
+Dockerfile
+README.md
+.env
+.env.*
+.bundle/*
+public/packs
+public/packs-test
+node_modules

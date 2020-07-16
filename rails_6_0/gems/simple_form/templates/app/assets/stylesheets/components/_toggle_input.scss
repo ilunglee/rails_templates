@@ -1,0 +1,106 @@
+// Switches for Bootstrap 4.
+$switch-height: 24px !default;
+$switch-inner-height: 16px !default;
+$switch-border-radius: $switch-height !default;
+$switch-border: 0 !default;
+$switch-bg: $input-disabled-bg !default;
+$switch-checked-bg: theme-color-level('primary', $alert-bg-level) !default;
+$switch-checked-thumb-bg: map-get($theme-colors, 'primary') !default;
+$switch-disabled-bg: $custom-control-indicator-disabled-bg !default;
+$switch-disabled-color: $custom-control-label-disabled-color !default;
+$switch-thumb-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.54) !default;
+$switch-thumb-bg: $white !default;
+$switch-thumb-border-radius: 50% !default;
+$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), 0.25) !default;
+$switch-transition: 0.2s all !default;
+
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: $font-size-base;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    background: none;
+    border: 0;
+
+    clip-path: inset(50%);
+
+    + label .switch-btn {
+      position: relative;
+      display: inline-block;
+      height: $switch-height;
+      min-width: calc(#{$switch-height} * 2);
+      margin-right: $spacer;
+      line-height: $switch-height;
+      text-indent: calc(calc(#{$switch-height} * 2) + 0.5rem);
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: $switch-border-radius;
+      outline: none;
+      user-select: none;
+
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        display: block;
+        width: calc(#{$switch-height} * 2);
+        content: '';
+      }
+
+      &::before {
+        top: 50%;
+        right: 0;
+        height: $switch-inner-height;
+        background-color: $switch-bg;
+        border: $switch-border;
+        border-radius: calc(#{$switch-inner-height} / 2);
+        transition: $switch-transition;
+        @include transform(translateY(-50%));
+      }
+
+      &::after {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: $switch-height;
+        height: $switch-height;
+        background-color: $switch-thumb-bg;
+        border: $switch-border;
+        border-radius: $switch-thumb-border-radius;
+        box-shadow: $switch-thumb-box-shadow;
+        transition: $switch-transition;
+      }
+    }
+
+    &:checked + label .switch-btn {
+      &::before { background-color: $switch-checked-bg; }
+
+      &::after {
+        margin-left: $switch-height;
+        background: $switch-checked-thumb-bg;
+      }
+    }
+
+    &:focus + label .switch-btn::before {
+      outline: none;
+      box-shadow: $switch-focus-box-shadow;
+    }
+
+    &:disabled + label .switch-btn {
+      color: $switch-disabled-color;
+      cursor: not-allowed;
+    }
+
+    &:disabled + label .switch-btn::before {
+      background-color: $switch-disabled-bg;
+    }
+  }
+}

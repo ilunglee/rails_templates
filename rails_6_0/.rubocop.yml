@@ -1,0 +1,83 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.6
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - '**/db/schema.rb'
+    - '**/lib/tasks/**/*'
+    - '**/db/migrate/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - '**/db/migrate/*.rb'
+Metrics/MethodLength:
+  Exclude:
+    - '**/db/migrate/*.rb'
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/**/*.rb'
+    - '**/config/**/*.rb'
+    - '**/app/admin/**/*.rb'
+    - '**/*.arb'
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - '**/db/migrate/*.rb'
+    - '**/db/seeds/*.rb'
+    - '**/config/**/*.rb'
+    - '**/Gemfile'
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: empty_lines
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Style/Documentation:
+  Exclude:
+    - '**/app/controllers/**/*.rb'
+    - '**/app/models/**/*.rb'
+    - '**/app/helpers/**/*.rb'
+    - '**/db/migrate/*.rb'
+    - '**/config/**/*.rb'
+    - '**/lib/tasks/**/*.rake'
+    - '**/spec/support/**/*.rb'
+Style/OptionHash:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  # waiting on https://github.com/rrosenblum/rubocop/commit/0c7f91b0abeb2dad305edfa301366b504bb7b734
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - '**/Gemfile'
+
+Bundler/OrderedGems:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 4
+RSpec/ExampleLength:
+  Max: 15
+  Exclude:
+    - '**/spec/features/**/*'
+    - '**/spec/shared/**/*'

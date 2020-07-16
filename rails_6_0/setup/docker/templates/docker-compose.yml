@@ -1,0 +1,74 @@
+version: '2.4'
+services:
+  base: &base
+    image: motion_artistry:1.0.0
+    build:
+      args:
+        RUBY_VERSION: '2.5.1'
+        NODE_MAJOR: '13'
+        BUNDLER_VERSION: '1.17.3'
+        BUNDLE_GITHUB__COM: '${BUNDLE_GITHUB__COM}'
+      context: .
+      dockerfile: ./Dockerfile
+
+  backend: &backend
+    <<: *base
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app:cached
+      - rails_cache:/app/tmp/cache
+      - bundle:/usr/local/bundle
+      - node_modules:/app/node_modules
+      - packs:/app/public/packs
+
+  web:
+    <<: *backend
+    command: bundle exec rails server -b 0.0.0.0
+    ports:
+      - '3000:3000'
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@postgres:5432
+      - WEBPACKER_DEV_SERVER_HOST=webpacker
+    depends_on:
+      - postgres
+      # - redis
+
+  # sidekiq:
+  #   <<: *backend
+  #   command: bundle exec sidekiq -C config/sidekiq.yml
+  #   environment:
+  #     - DATABASE_URL=postgres://postgres:postgres@postgres:5432
+
+  # redis:
+  #   image: redis:latest
+
+  webpacker:
+    <<: *backend
+    command: ./bin/webpack-dev-server
+    ports:
+      - '3035:3035'
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+
+  postgres:
+    image: postgres:12.1
+    ports:
+      - 5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  # selenium_chrome:
+  #   image: selenium/standalone-chrome-debug:3.9.1-actinium
+  #   ports:
+  #     - "4444:4444"
+  #     - "5900:5900"
+  #   depends_on:
+  #     - web
+
+volumes:
+  rails_cache:
+  bundle:
+  node_modules:
+  packs:
+  postgres:

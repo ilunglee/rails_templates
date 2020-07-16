@@ -1,0 +1,5 @@
+app/**/*.rb
+--protected
+--no-private
+-
+README.md

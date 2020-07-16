@@ -1,0 +1,34 @@
+{
+  "name": "<%= @name %>",
+  "description": "<%= @description %>",
+  "scripts": {
+    "postdeploy": "rails db:migrate && rails db:seed:all"
+  },
+  "env": {
+    "BUNDLE_GITHUB__COM": {
+      "required": true
+    },
+    "RAILS_MASTER_KEY": {
+      "required": true
+    },
+    "WD_CHROME_PATH": "/app/.apt/usr/bin/google-chrome-stable"
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rspec spec --fail-fast --exclude-pattern 'spec/features/**/*_spec.rb'"
+      }
+    }
+  },
+  "formation": {},
+  "addons": [
+    "heroku-postgresql:hobby-basic"
+  ],
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "heroku/ruby" },
+    { "url": "https://github.com/heroku/heroku-buildpack-activestorage-preview" },
+    { "url": "https://github.com/heroku/heroku-buildpack-chromedriver" },
+    { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" }
+  ]
+}

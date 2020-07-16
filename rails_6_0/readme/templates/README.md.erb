@@ -1,0 +1,44 @@
+# <%= @name %>
+![SimpleCov](badges/coverage_badge_total.svg)
+![Rails](https://img.shields.io/badge/Rails-6.0-%23CB0000)
+![Ruby](https://img.shields.io/badge/Ruby-2.5.1-%23CB0000)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-4.3.1-563D7C)
+![ActionPanel](https://img.shields.io/badge/ActionPanel-0.1.0-FCB400)
+
+## Getting started
+1. Clone this repo
+1. Run `cp .sample.env .env` to create an `.env` file. See [.sample.env](.sample.env) for keys.
+1. Run `cp .sample.env.test .env.test` to create an `.env.test` file. See [.sample.env.test](.sample.env.test) for keys.
+1. Create `master.key` or environment variable `RAILS_MASTER_KEY` in `.env` with the secret key.
+1. Add bundle config for private gems `bundle config --local GITHUB__COM {GITHUB_AUTH_KEY}`. You can find this key from heroku pipeline under `BUNDLE_GITHUB__COM`
+1. To edit credentials type `EDITOR='code --wait' rails:credentials:edit` in the termial. You can replace `EDITOR` with your own editor choice.
+
+## Deployment
+For deployment required environment variables please see [app.json](app.json)
+
+## Frameworks
+Framework              | Description
+-----------------------| -----------
+[Bootstrap]            | Frontend framework
+[ActionPanel]          | Admin UI Framework
+[RSpec]                | Testing framework
+
+## Reports
+Framework       | Description
+----------------| -----------
+[LicenseFinder] | List out gem licenses `bundle exec license_finder report --format html > tmp/reports/licenses.html`.
+[RailsERD]      | ERD will be generated in `erd.pdf` after you run `rails db:migrate` but you can also run manually with `bundle exec erd`
+[SimpleCov]     | RSpec coverage reports are saved to `tmp/reports/coverage/` and will update when you run `rspec spec`
+[Brakeman]      | Check for security vulnerabilities. Run `brakeman`. Report will be saved to `tmp/reports/brakeman.html`.
+[Yard]          | See documentation by running `yard server`.
+[Inch]          | See documentation analytics by running `inch`.
+
+[Bootstrap]: https://img.shields.io/badge/Bootstrap-4.3.1-563D7C
+[ActionPanel]: https://www.cmdbrew.com
+[RSpec]: https://github.com/rspec/rspec-rails
+[LicenseFinder]: https://github.com/pivotal/LicenseFinder
+[RailsERD]: https://github.com/voormedia/rails-erd
+[SimpleCov]: https://github.com/colszowka/simplecov
+[Brakeman]: https://github.com/presidentbeef/brakeman
+[Yard]: https://github.com/lsegal/yard
+[Inch]: https://github.com/rrrene/inch
