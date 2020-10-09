@@ -1,0 +1,211 @@
+---
+- - :whitelist
+  - CC0-1.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - CC-BY-4.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - CC-BY-3.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(WTFPL OR MIT)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(BSD-3-Clause OR GPL-2.0)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - GPL-2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - BSD-3-Clause OR MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(MIT OR Apache-2.0)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(BSD-2-Clause OR MIT OR Apache-2.0)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(MIT AND BSD-3-Clause)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - "(MIT AND Zlib)"
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - MIT
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - MIT*
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-10-17 22:07:22.406754000 Z
+- - :whitelist
+  - Apache 2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:08:17.434917000 Z
+- - :whitelist
+  - New BSD
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:13:19.037523000 Z
+- - :whitelist
+  - BSD*
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:13:19.037523000 Z
+- - :whitelist
+  - Simplified BSD
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:14:01.719705000 Z
+- - :whitelist
+  - ruby
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - ISC
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - BSD 2-Clause "Simplified" License
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - GNU General Public License v3.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - GNU General Public License v2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - Mozilla Public License 2.0
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - 2-clause BSDL
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:15:02.623916000 Z
+- - :whitelist
+  - Copyright CMDBrew Studio Inc.
+  - :who:
+    :why:
+    :versions: []
+    :when: 2019-11-19 02:16:46.101732000 Z
+- - :approve
+  - brakeman
+  - :who:
+    :why: Development use for security scanning
+    :versions: []
+    :when: 2019-11-19 02:17:20.678570000 Z
+- - :approve
+  - skylight
+  - :who:
+    :why: Performance monitoring tool
+    :versions: []
+    :when: 2019-11-19 02:18:58.385366000 Z
+- - :approve
+  - skylight-core
+  - :who:
+    :why: Performance monitoring tool
+    :versions: []
+    :when: 2019-11-19 02:20:17.071620000 Z
+- - :approve
+  - just-datetime-picker
+  - :who:
+    :why: GPL-3.0
+    :versions: []
+    :when: 2019-11-19 20:59:42.458994000 Z
+- - :approve
+  - tweetnacl
+  - :who:
+    :why: The Unlicense
+    :versions: []
+    :when: 2019-11-19 21:01:13.367019000 Z
+- - :approve
+  - unicode_utils
+  - &1
+    :who:
+    :why: BSD
+    :versions: []
+    :when: 2020-06-09 20:26:52.192887000 Z
+- - :approve
+  - license
+  - *1
+- - :approve
+  - channels
+  - &2
+    :who:
+    :why: MIT
+    :versions: []
+    :when: 2020-06-09 20:27:55.716349000 Z
+- - :approve
+  - license
+  - *2
+- - :approve
+  - spark-md5
+  - &3
+    :who:
+    :why: MIT
+    :versions: []
+    :when: 2020-06-09 20:28:26.860392000 Z
+- - :approve
+  - license
+  - *3

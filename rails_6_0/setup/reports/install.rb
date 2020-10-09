@@ -38,6 +38,7 @@ if yes?('Install License Finder?')
   end
 
   template './templates/config/license_finder.yml', 'config/license_finder.yml'
+  template './templates/config/dependency_decisions.yml', 'config/dependency_decisions.yml'
 end
 
 run 'bundle install'
